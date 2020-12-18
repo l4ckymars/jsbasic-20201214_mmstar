@@ -6,8 +6,9 @@
  */
 function sum(m, n) {
   if(m === null || n === null || m === undefined || n === undefined || 
-  	isNaN(m) || isNaN(n) || m.trim() === '' || n.trim() === '') {
-    return 'Одно или оба слагаемых \u2013 не число(а)';
+  	m.isFinite() || n.isFinite() || String(m).trim() === '' || String(n).trim() === '') {
+      throw new Error('Одно или оба слагаемых \u2013 не число(а)');
   }
-  return +m + +n;
+  return Number(m) + Number(n);
 }
+
