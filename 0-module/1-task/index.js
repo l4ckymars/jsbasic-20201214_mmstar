@@ -6,9 +6,11 @@
  */
 function sum(m, n) {
   m = String(m).replace(/ /g, '');
+  m = Number(m);
   n = String(n).replace(/ /g, '');
-  if(Number.isFinite(m) || Number.isFinite(n)) {
-      throw new Error('Одно или оба слагаемых \u2013 не число(а)');
+  n = Number(n);
+  if(isFinite(m) && isFinite(n)) {
+      return m + n;
   }
-  return Number(m) + Number(n);
+  throw new Error('Одно или оба слагаемых не является конечным числом');
 }
