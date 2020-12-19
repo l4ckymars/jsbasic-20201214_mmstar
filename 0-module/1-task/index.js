@@ -5,10 +5,10 @@
  * @returns {number}
  */
 function sum(m, n) {
-  if(m === null || n === null || m === undefined || n === undefined || 
-  	m.isFinite() || n.isFinite() || String(m).trim() === '' || String(n).trim() === '') {
+  m = m.replace(/ /g, '');
+  n = n.replace(/ /g, '');
+  if(Number.isFinite(m) || Number.isFinite(n)) {
       throw new Error('Одно или оба слагаемых \u2013 не число(а)');
   }
-  return Number(m) + Number(n);
+  return m + n;
 }
-
