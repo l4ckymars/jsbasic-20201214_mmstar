@@ -12,7 +12,10 @@ function print(text) {
  * @returns {boolean}
  */
 function isValid(name) {
-  // ваш код...
+  if(/\s/g.test(name) || name == null || name == undefined || name.length < 4) {
+    return false;
+  }
+  return true;
 }
 
 function sayHello() {

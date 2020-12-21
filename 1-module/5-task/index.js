@@ -5,5 +5,12 @@
  * @returns {string}
  */
 function truncate(str, maxlength) {
-  // ваш код...
+  let diff = str.length - maxlength;
+  if (diff > 0) {
+    let new_str = str.slice(0, -diff - 1);
+    new_str = new_str + '…'
+
+    return new_str;
+  }
+  return str;
 }
